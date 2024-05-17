@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guess the Number Game</title>
+</head>
+<body>
+    <h1>Guess the Number Game</h1>
+    <p>Click the button below to start the game.</p>
+    <button onclick="guessNumber()" style="cursor: pointer;">Start Game</button>
+
+    <script>
+        function guessNumber() {
+            // Generate a random integer between 1 and 10 (inclusive)
+            var num = Math.ceil(Math.random() * 10);
+
+            // Log the generated random number to the console for debugging
+            console.log('Generated number:', num);
+
+            // Prompt the user to guess a number between 1 and 10 (inclusive)
+            var gnum = prompt('Guess the number between 1 and 10 inclusive');
+
+            // Check if the input is a number
+            if (isNaN(gnum)) {
+                alert('Please enter a valid number.');
+                return;
+            }
+
+            // Convert the user input to a number
+            gnum = parseInt(gnum, 10);
+
+            // Check if the guessed number matches the generated random number
+            if (gnum === num) {
+                // Alert a message if the guessed number matches the random number
+                alert('Good Work! You guessed the number correctly.');
+            } else {
+                // Alert a message if the guessed number does not match, and also provide the correct number
+                alert('Not matched. The correct number was ' + num);
+            }
+        }
+    </script>
+</body>
+</html>
